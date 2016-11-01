@@ -52,6 +52,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseOutput.cs" />
+    <Compile Include="OutputPng.cs" />
+    <Compile Include="OutputSDL.cs" />
     <Compile Include="Shapes\Cube.cs" />
     <Compile Include="LightSource.cs" />
     <Compile Include="Color.cs" />
@@ -68,6 +71,7 @@
     <Compile Include="Scene.cs" />
     <Compile Include="Shapes\Sphere.cs" />
     <Compile Include="Shapes\Triangle.cs" />
+    <Compile Include="Utility.cs" />
     <Compile Include="Vec3.cs" />
     <Compile Include="ViewPlane.cs" />
   </ItemGroup>
@@ -79,6 +83,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>project_res.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\results.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

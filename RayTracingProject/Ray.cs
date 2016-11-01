@@ -55,7 +55,7 @@ namespace RayTracingProject
 
             if (hit)
             {
-                int nearest = Program.arg_min(t_list);
+                int nearest = Utility.arg_min(t_list);
                 Geometry o = o_list[nearest];
                 ret_color = new color(o.shape_color); // a new color each time 
                 hit_point = hp_list[nearest]; // changed get() to []

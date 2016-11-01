@@ -192,6 +192,26 @@ namespace RayTracingProject
             num_objs++; // 0 is the invalid id
             obj.set_id(num_objs);
         }
-        
+
+        public void SphereFlake(Vec3 center, int radius, int level, color c)
+        {
+            if (level < 1)
+                return;
+
+            add_shape(new Sphere(c, center, radius, 1, 1));
+
+            int nRad = radius / 2;
+
+            // top
+            SphereFlake(new Vec3(center.x, (center.y + nRad + radius), center.z), nRad, (level - 1), c);
+
+            // sides
+            SphereFlake(new Vec3((center.x + nRad + radius), center.y, center.z), nRad, (level - 1), c);
+            SphereFlake(new Vec3((center.x - (nRad + radius)), center.y, center.z), nRad, (level - 1), c);
+            SphereFlake(new Vec3(center.x , center.y, (center.z + nRad + radius)), nRad, (level - 1), c);
+            SphereFlake(new Vec3(center.x, center.y, center.z - (nRad + radius)), nRad, (level - 1), c);
+
+        }
+
     }
 }
